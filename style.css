@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+    --bg-color: #1a1a2e;
+    --container-bg: #16213e;
+    --primary-color: #0f3460;
+    --accent-color: #e94560;
+    --text-color: #dcdcdc;
+    --completed-color: #535c68;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+.app-container {
+    width: 90%;
+    max-width: 600px;
+    background-color: var(--container-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+#task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#task-input, #task-date, #task-time {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+#task-input::placeholder {
+    color: #888;
+}
+
+.task-meta {
+    display: flex;
+    gap: 15px;
+}
+
+#add-task-btn {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--accent-color);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#add-task-btn:hover {
+    background-color: #d43d51;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--text-color);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    background-color: var(--primary-color);
+}
+
+.filter-btn.active {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #fff;
+}
+
+#task-list {
+    list-style: none;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.task-item.completed {
+    background-color: var(--completed-color);
+    opacity: 0.7;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+}
+
+.task-item input[type="checkbox"] {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.task-content {
+    flex-grow: 1;
+}
+
+.task-text {
+    font-size: 16px;
+}
+
+.task-due-date {
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 4px;
+}
+
+.task-actions button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.task-actions button:hover {
+    color: var(--accent-color);
+}
